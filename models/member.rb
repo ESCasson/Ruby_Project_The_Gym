@@ -23,5 +23,11 @@ def self.delete_all()
   sql = "DELETE FROM members"
   SqlRunner.run(sql)
 end
+def self.all()
+  sql = "SELECT * FROM members"
+  result = SqlRunner.run(sql)
+  return result.map{|member| Member.new(member)}
+end
+
 
 end
