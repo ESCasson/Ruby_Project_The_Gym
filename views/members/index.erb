@@ -11,7 +11,7 @@
   <input type="radio" name="premier_member" value="t">Premier
   <input type="radio" name="premier_member" value="f">Standard
 
-  <input type="submit" value="Add new member">
+  <input class="btn" type="submit" value="Add new member">
 
 
 </form>
@@ -28,9 +28,11 @@
   <%="Standard Member"%>
   <% end %>
 </p>
-<p><a href="/members/<%= member.id %>/edit">Edit Order</a></p>
+<form action="/members/<%= member.id %>/edit" method="get">
+        <button class="btn" type="submit">Edit Order</button>
+     </form>
 <p><form method="post" action="members/<%= member.id %>/delete">
-  <input type="submit" value="Delete Member"/>
+  <input class="btn" type="submit" value="Delete Member"/>
 </form></p>
 
 <hr/>
