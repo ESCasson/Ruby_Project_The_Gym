@@ -1,0 +1,33 @@
+<h3>Add a member</h3>
+<form class="" action="/members" method="post">
+  <label for="first-name">First Name</label>
+  <input type="text" id="first-name" name="first_name">
+
+  <label for="last-name">Last Name</label>
+  <input type="text" id="last-name" name="last_name">
+
+  <label for="membership">Membership Level</label>
+
+  <input type="radio" name="premier_member" value="t">Premier
+  <input type="radio" name="premier_member" value="f">Standard
+
+  <input type="submit" value="Add new member">
+
+
+</form>
+
+
+<h3>All the members</h3>
+<p> <% for member in @members.reverse %>
+<p>First name : <%=member.first_name%></p>
+<p>Last name : <%=member.last_name%></p>
+<p>Membership :
+  <%if member.premier_member == 't'%>
+  <%="Premier Member"%>
+  <%else%>
+  <%="Standard Member"%>
+  <% end %>
+</p>
+<hr/>
+<%end%>
+</p>

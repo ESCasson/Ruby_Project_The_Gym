@@ -26,7 +26,21 @@ end
 def self.all()
   sql = "SELECT * FROM members"
   result = SqlRunner.run(sql)
-  return result.map{|member| Member.new(member)}
+  return result.map{|member| Member.new(member)}.reverse
+end
+
+def self.membership_display(membership_details)
+  if membership_details == 't'
+    return 'Premier Member'
+  end
+  return 'Standard Member'
+end
+
+def update(new_first_name, new_last_name, new_premier_member)
+  sql = "UPDATE members SET (first_name, last_name, premier_member)
+  = ($1, $2, $3) WHERE id = $4"
+  values = [new_first_name, new_last_name, new_premier_member, @id]
+  SqlRunner.run(sql, values)
 end
 
 
