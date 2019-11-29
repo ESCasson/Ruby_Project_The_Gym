@@ -31,3 +31,11 @@ post '/members/:id' do
   result.update()
   redirect to '/members'
 end
+
+#delete
+
+post '/members/:id/delete' do
+@member = Member.find_by_id(params[:id])
+@member.delete
+redirect to("/members")
+end
