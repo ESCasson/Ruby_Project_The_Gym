@@ -1,0 +1,31 @@
+<form method="post" action="/members/<%= @member.id %>">
+  <label for="first-name">First Name:</label>
+  <input
+  type="text"
+  name="first_name"
+  id="first-name"
+  value="<%= @member.first_name %>"
+  />
+
+  <label for="last-name">Last Name:</label>
+  <input
+  type="text"
+  name="last_name"
+  id="last-name"
+  value="<%= @member.last_name %>"
+  />
+
+  <label for="premier_member">Membership:</label>
+  <select name="premier_member" id="premier_member">
+    <option
+    value="t"
+    <%= "selected" if @member.premier_member == "t" %>
+    >Premier Member</option>
+    <option
+    value="f"
+    <%= "selected" if @member.premier_member == "f" %>
+    >Standard Member</option>
+  </select>
+
+  <input type='submit' value="Edit Order">
+</form>
