@@ -1,0 +1,28 @@
+<h3>Add a class</h3>
+<form class="" action="/exclasses" method="post">
+  <label for="Date-and-Time">Date and Time</label>
+  <input type="date" id="date" name="date">
+  <input type="time" id="time" name="time">
+
+  <label for="Class">Type and Duration</label>
+  <input type="text" id="type" name="type">
+  <input type="number" id="length-min" name="length_min"><br><br>
+  <label for="instructor">Instructor</label>
+  <input type="text" id="instructor" name="instructor">
+
+
+  <input class="btn" type="submit" value="Add new class">
+
+
+</form>
+
+
+<h3>List of all Classes</h3>
+<% @exclasses.reverse.each do |exclass| %>
+  <p>Type: <%= exclass.type %></p>
+  <p>Instructor: <%= exclass.instructor %></p>
+  <p>Duration: <%= exclass.length_min.to_i() %></p>
+  <p>Date: <%= exclass.date %></p>
+  <p>Time: <%=exclass.time %></p>
+  <hr />
+<% end %>

@@ -6,7 +6,7 @@
   <label for="last-name">Last Name</label>
   <input type="text" id="last-name" name="last_name">
 
-  <label for="membership">Membership Level</label>
+  <label for="membership">Membership Level     .</label>
 
   <input type="radio" name="premier_member" value="t">Premier
   <input type="radio" name="premier_member" value="f">Standard
@@ -29,7 +29,7 @@
   <% end %>
 </p>
 <form action="/members/<%= member.id %>/edit" method="get">
-        <button class="btn" type="submit">Edit Order</button>
+        <button class="btn" type="submit">Edit Member</button>
      </form>
 <p><form method="post" action="members/<%= member.id %>/delete">
   <input class="btn" type="submit" value="Delete Member"/>

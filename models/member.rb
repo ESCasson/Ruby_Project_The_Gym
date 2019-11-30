@@ -30,9 +30,6 @@ class Member
     return result.map{|member| Member.new(member)}.reverse
   end
 
-  def self.hello_world
-    p "hello world!"
-  end
 
   def self.membership_display(membership_details)
     if membership_details == 't'

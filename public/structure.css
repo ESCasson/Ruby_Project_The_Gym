@@ -7,6 +7,12 @@ body {
   font-size: 25px;
 }
 
+header{
+border: 30px;
+margin: 25px;
+padding: 25px;
+}
+
 h1 {
   font-family: 'Audiowide', cursive;
   margin: 0px;
