@@ -1,0 +1,19 @@
+<h3>Class Details</h3>
+<p>Type: <%= @exclass.type %>&nbsp &nbsp
+Instructor: <%= @exclass.instructor %></p>
+<p>Date: <%= @exclass.date %>&nbsp &nbsp
+Time: <%=@exclass.time %>&nbsp &nbsp
+Duration: <%= @exclass.length_min.to_i()%></p>
+<h4>Add Attendees</h4>
+<form method="post" action="/attendees">
+
+  <label for="member">Select Member
+<select name="member_id" id="member_id">
+<% for member in @members %>
+<option value="<%= member.id %>"> <%= member.full_name() %> </option>
+<% end %>
+</select>
+</label>
+<input class="btn" type='submit' value="Add Attendee">
+</form>
+<h4>Current Attendees</h4>

@@ -21,6 +21,15 @@ def test_member()
   assert_equal('true', member1.premier_member)
 end
 
+def test_full_name()
+  member1 = Member.new({
+    'first_name' => 'Ellie',
+    'last_name' => 'Casson',
+    'premier_member' => 'true'
+  })
+  assert_equal('Ellie Casson', member1.full_name())
+end
+
 
 
 

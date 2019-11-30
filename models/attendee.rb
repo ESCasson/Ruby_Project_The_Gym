@@ -23,4 +23,10 @@ def self.delete_all
   SqlRunner.run(sql)
 end
 
+def delete()
+  sql = "DELETE FROM attendees WHERE id = $1"
+  values = [@id]
+  SqlRunner.run(sql, values)
+end
+
 end

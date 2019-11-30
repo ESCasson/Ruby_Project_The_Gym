@@ -16,6 +16,12 @@ post '/exclasses' do
   new_exclass.save
   redirect to("/exclasses")
 end
+#show details and send through member info
+get '/exclasses/:id' do
+  @members = Member.all()
+  @exclass = Exclass.find_by_id(params[:id])
+  erb( :"exclasses/show")
+end
 
 #delete instance from database
 post '/exclasses/:id/delete' do

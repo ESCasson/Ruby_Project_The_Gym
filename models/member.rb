@@ -27,7 +27,7 @@ class Member
   def self.all()
     sql = "SELECT * FROM members"
     result = SqlRunner.run(sql)
-    return result.map{|member| Member.new(member)}.reverse
+    return result.map{|member| Member.new(member)}
   end
 
 
@@ -57,6 +57,10 @@ class Member
     sql = "DELETE FROM members WHERE id = $1"
     values =[@id]
     SqlRunner.run(sql, values)
+  end
+
+  def full_name
+    return @first_name + " " + @last_name
   end
 
 
