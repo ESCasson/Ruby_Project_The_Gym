@@ -27,10 +27,31 @@ def self.delete_all()
   SqlRunner.run(sql)
 end
 
-def self.all()
-  sql = "SELECT * FROM exclasses"
+def self.all_current()
+  sql = "SELECT * FROM exclasses WHERE date > current_date - interval '1 day'"
   result = SqlRunner.run(sql)
   return result.map{|exclass| Exclass.new(exclass)}
+end
+
+def delete()
+  sql = "DELETE FROM exclasses WHERE id = $1"
+  values =[@id]
+  SqlRunner.run(sql, values)
+end
+
+def self.find_by_id(id)
+  sql = "SELECT * FROM exclasses WHERE id = $1"
+  values = [id]
+  exclass = SqlRunner.run(sql, values)
+  result = Exclass.new(exclass[0])
+  return result
+end
+
+def update()
+  sql = "UPDATE exclasses SET (date, time, type, instructor, length_min)
+  = ($1, $2, $3, $4, $5) WHERE id = $6"
+  values = [@date, @time, @type, @instructor, @length_min, @id]
+  SqlRunner.run(sql, values)
 end
 
 

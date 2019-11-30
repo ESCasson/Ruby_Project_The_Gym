@@ -4,7 +4,6 @@ require( 'pry' )
 
 require_relative( '../models/member.rb' )
 
-also_reload( '../models/*' )
 
 #show_all
 get '/members' do

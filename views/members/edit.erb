@@ -1,3 +1,4 @@
+<h3>Member Edit Page</h3>
 <form method="post" action="/members/<%= @member.id %>">
   <label for="first-name">First Name:</label>
   <input
@@ -16,7 +17,7 @@
   />
 
   <label for="premier_member">Membership:</label>
-  
+
   <select name="premier_member" id="premier_member">
     <option
     value="t"
@@ -28,5 +29,5 @@
     >Standard Member</option>
   </select>
 
-  <input type='submit' value="Edit Order">
+  <input type='submit' value="Edit Member">
 </form>

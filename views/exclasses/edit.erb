@@ -1,0 +1,17 @@
+<h3>Class Edit Page</h3>
+<form method="post"
+action="/exclasses/<%= @exclass.id%>">
+<label for="date">Date:</label>
+<input type="date" name="date" id="date" value="<%= @exclass.date %>"/>
+<label for="time">Time:</label>
+<input type="time" name="time" id="time" value="<%= @exclass.time %>">
+<label for="type">Type:</label>
+<input type="text" name="type" id="type" value="<%= @exclass.type %>">
+<label for="length_min">Duration</label>
+<input type="number" name="length_min" id="length_min"
+value="<%=@exclass.length_min %>">
+<label for="instructor">Instructor:</label>
+<input type="text" name="instructor" id="instructor"
+value="<%= @exclass.instructor %>">
+<input type="submit" value="Edit Class ">
+</form>

@@ -1,7 +1,9 @@
 require('pry')
 require_relative('../models/member.rb')
 require_relative('../models/exclass.rb')
+require_relative('../models/attendee.rb')
 
+Attendee.delete_all
 Exclass.delete_all()
 Member.delete_all()
 
@@ -42,6 +44,7 @@ exclass2 = Exclass.new({
   'instructor' => 'Debbie',
   'length_min' => '60'
 })
+
 exclass3 = Exclass.new({
   'date' => '2019-12-01',
   'time' => '20:00',
@@ -53,6 +56,27 @@ exclass3 = Exclass.new({
 exclass1.save()
 exclass2.save()
 exclass3.save()
+
+
+attendee1 = Attendee.new({
+  'member_id' => member1.id,
+  'exclass_id' => exclass1.id
+  })
+attendee2 = Attendee.new({
+  'member_id' => member2.id,
+  'exclass_id' => exclass1.id
+  })
+
+attendee3 = Attendee.new({
+  'member_id' => member3.id,
+  'exclass_id' => exclass3.id
+  })
+
+attendee1.save()
+attendee2.save()
+attendee3.save()
+
+
 
 binding.pry
 

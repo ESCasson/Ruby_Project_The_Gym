@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS attendees;
 DROP TABLE IF EXISTS members;
 DROP TABLE IF EXISTS exclasses;
 
@@ -15,4 +16,10 @@ CREATE TABLE exclasses(
   type VARCHAR,
   instructor VARCHAR,
   length_min  VARCHAR
+);
+
+CREATE TABLE attendees(
+id SERIAL PRIMARY KEY,
+member_id INT REFERENCES members(id),
+exclass_id INT REFERENCES exclasses(id)
 );

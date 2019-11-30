@@ -24,5 +24,11 @@
   <p>Duration: <%= exclass.length_min.to_i() %></p>
   <p>Date: <%= exclass.date %></p>
   <p>Time: <%=exclass.time %></p>
+<p><form action="/exclasses/<%= exclass.id %>/edit" method="get">
+        <button class="btn" type="submit">Edit Class</button>
+     </form></p>
+  <p><form method = "post" action="exclasses/<%= exclass.id %>/delete">
+    <input class="btn" type="submit" value ="Delete Class">
+  </form></p>
   <hr />
 <% end %>
