@@ -3,7 +3,7 @@ require( 'sinatra/contrib/all' )
 require( 'pry' )
 
 require_relative( '../models/exclass.rb' )
-
+require_relative( '../models/attendee.rb' )
 
 #show_all
 get '/exclasses' do
@@ -20,6 +20,7 @@ end
 get '/exclasses/:id' do
   @members = Member.all()
   @exclass = Exclass.find_by_id(params[:id])
+  @attendees = Attendee.find_by_exclass_id(params[:id])
   erb( :"exclasses/show")
 end
 

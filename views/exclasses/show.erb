@@ -6,8 +6,8 @@ Time: <%=@exclass.time %>&nbsp &nbsp
 Duration: <%= @exclass.length_min.to_i()%></p>
 <h4>Add Attendees</h4>
 <form method="post" action="/attendees">
-
-  <label for="member">Select Member
+  <input type="hidden" name="exclass_id" id="exclass_id" value="<%= @exclass.id %>">
+<label for="member">Select Member
 <select name="member_id" id="member_id">
 <% for member in @members %>
 <option value="<%= member.id %>"> <%= member.full_name() %> </option>
@@ -17,3 +17,10 @@ Duration: <%= @exclass.length_min.to_i()%></p>
 <input class="btn" type='submit' value="Add Attendee">
 </form>
 <h4>Current Attendees</h4>
+<p> <% for attendee in @attendees %>
+<p>Name: <%= attendee.member_full_name  %> </p>
+<form method = "post" action="attendees/<%= attendee.id %>/delete">
+  <input class="btn" type="submit" value ="Delete Attendee">
+</form>
+<%end %>
+</p>

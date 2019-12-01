@@ -1,3 +1,5 @@
+
+
 class Attendee
   attr_reader :id
   attr_accessor :member_id, :exclass_id
@@ -28,5 +30,30 @@ def delete()
   values = [@id]
   SqlRunner.run(sql, values)
 end
+
+def self.find_by_id(id)
+  sql = "SELECT * FROM attendees WHERE id = $1"
+  values = [id]
+  result = SqlRunner.run(sql, values)
+  return Attendee.new(result[0])
+end
+
+def self.find_by_exclass_id(exclass_id)
+  sql = "SELECT * FROM attendees WHERE exclass_id = $1"
+  values = [exclass_id]
+  result = SqlRunner.run(sql, values)
+  return result.map{|attendee| Attendee.new(attendee)}
+end
+
+def member_full_name()
+  sql = "SELECT members.* FROM members
+  INNER JOIN attendees ON attendees.member_id = members.id
+  WHERE attendees.id = $1"
+  values = [@id]
+  result = SqlRunner.run(sql, values)
+  member = Member.new(result[0])
+  return member.first_name + " " + member.last_name
+end
+
 
 end
