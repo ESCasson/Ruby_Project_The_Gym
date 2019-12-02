@@ -20,6 +20,12 @@ def save()
 
 end
 
+def self.all()
+  sql = "SELECT * FROM attendees"
+  result = SqlRunner.run(sql)
+  return result.map{|attendee| Attendee.new(attendee)}
+end
+
 def self.delete_all
   sql = "DELETE FROM attendees"
   SqlRunner.run(sql)
@@ -54,6 +60,7 @@ def member_full_name()
   member = Member.new(result[0])
   return member.first_name + " " + member.last_name
 end
+
 
 
 end

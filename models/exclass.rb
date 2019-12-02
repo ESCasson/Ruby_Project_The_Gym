@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 class Exclass
 
   attr_reader :id
-  attr_accessor :date, :time, :type, :instructor, :length_min
+  attr_accessor :date, :time, :type, :instructor, :length_min, :capacity
 
 def initialize(details)
   @id = details['id'].to_i if details['id']
@@ -11,6 +11,7 @@ def initialize(details)
   @type = details['type']
   @instructor = details['instructor']
   @length_min = details['length_min']
+  @capacity = details['capacity']
 end
 
 

@@ -7,6 +7,7 @@ require_relative( '../models/attendee.rb' )
 
 #show_all
 get '/exclasses' do
+  @atteedees = Attendee.all()
   @exclasses = Exclass.all_current()
   erb( :"exclasses/index" )
 end

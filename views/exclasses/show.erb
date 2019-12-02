@@ -18,9 +18,9 @@ Duration: <%= @exclass.length_min.to_i()%></p>
 </form>
 <h4>Current Attendees</h4>
 <p> <% for attendee in @attendees %>
-<p>Name: <%= attendee.member_full_name  %> </p>
+<p>Name: <%= attendee.member_full_name  %>
 <form method = "post" action="attendees/<%= attendee.id %>/delete">
   <input class="btn" type="submit" value ="Delete Attendee">
-</form>
+</form></p>
 <%end %>
 </p>
