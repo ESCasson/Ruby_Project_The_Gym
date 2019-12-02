@@ -4,6 +4,15 @@ Instructor: <%= @exclass.instructor %></p>
 <p>Date: <%= @exclass.date %>&nbsp &nbsp
 Time: <%=@exclass.time %>&nbsp &nbsp
 Duration: <%= @exclass.length_min.to_i()%></p>
+<p>Peak? :
+  <%if @exclass.peak == 't'%>
+  <%="Yes"%>
+  <%else%>
+  <%="No"%>
+  <% end %>
+</p>
+
+<p>Number of Spaces:   <%=@exclass.spaces() %>
 <h4>Add Attendees</h4>
 <form method="post" action="/attendees">
   <input type="hidden" name="exclass_id" id="exclass_id" value="<%= @exclass.id %>">
@@ -14,11 +23,11 @@ Duration: <%= @exclass.length_min.to_i()%></p>
 <% end %>
 </select>
 </label>
-<input class="btn" type='submit' value="Add Attendee">
+<input class="btn" <%= @exclass.no_spaces_disabled %>type='submit' value="<%=@exclass.no_spaces_message_show %>">
 </form>
 <h4>Current Attendees</h4>
 <p> <% for attendee in @attendees %>
-<p>Name: <%= attendee.member_full_name  %>
+<p>Name: <%= attendee.member_full_name%>
 <form method = "post" action="attendees/<%= attendee.id %>/delete">
   <input class="btn" type="submit" value ="Delete Attendee">
 </form></p>

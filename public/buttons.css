@@ -9,13 +9,6 @@
   font-family: 'Gruppo', cursive;
 }
 
-.btn--danger {
-  background-color: darkred;
-}
-
-.btn--danger:hover {
-  background-color: #730000;
-}
 
 .btn--action:hover {
   background-color: #495C27;

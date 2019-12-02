@@ -4,11 +4,18 @@
   <input type="date" id="date" name="date">
   <input type="time" id="time" name="time">
 
-  <label for="Class">Type and Duration</label>
+  <label for="Class">Type</label>
   <input type="text" id="type" name="type">
+  <label for="Class">Duration</label>
   <input type="number" id="length-min" name="length_min"><br><br>
   <label for="instructor">Instructor</label>
   <input type="text" id="instructor" name="instructor">
+  <label for="capacity">Class Capacity</label>
+  <input type="number" id="capacity" name="capacity" default=30>
+  <label for="peak">Peak Class?</label>
+  <input type="radio" name="peak" value ="t">Yes
+  <input type="radio" name="peak" value ="f">No
+
 
 
   <input class="btn" type="submit" value="Add new class">
@@ -24,9 +31,16 @@
   <p>Duration: <%= exclass.length_min.to_i() %></p>
   <p>Date: <%= exclass.date %></p>
   <p>Time: <%=exclass.time %></p>
-  <p>Number of attendees:   <%=Attendee.find_by_exclass_id(exclass.id).count() %></p>
-  <p><form action="/exclasses/<%= exclass.id %>" method="get">
-          <button class="btn" type="submit">Add Attendees</button>
+  <p>Peak? :
+    <%if exclass.peak == 't'%>
+    <%="Yes"%>
+    <%else%>
+    <%="No"%>
+    <% end %>
+  </p>
+  <p>Number of Spaces:   <%=exclass.spaces() %>
+  <form action="/exclasses/<%= exclass.id %>" method="get">
+          <button class="btn" type="submit"><%= exclass.no_spaces_message_index %></button>
        </form></p>
 <p><form action="/exclasses/<%= exclass.id %>/edit" method="get">
         <button class="btn" type="submit">Edit Class</button>

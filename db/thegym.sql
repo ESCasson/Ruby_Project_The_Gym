@@ -15,7 +15,9 @@ CREATE TABLE exclasses(
   time TIME,
   type VARCHAR,
   instructor VARCHAR,
-  length_min  VARCHAR
+  length_min  VARCHAR,
+  capacity INT,
+  peak BOOLEAN
 );
 
 CREATE TABLE attendees(
