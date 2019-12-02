@@ -15,7 +15,7 @@ Duration: <%= @exclass.length_min.to_i()%></p>
 <p>Number of Spaces:   <%=@exclass.spaces() %>
 <h4>Add Attendees</h4>
 <form method="post" action="/attendees">
-  <input type="hidden" name="exclass_id" id="exclass_id" value="<%= @exclass.id %>">
+<input type="hidden" name="exclass_id" id="exclass_id" value="<%= @exclass.id %>">
 <label for="member">Select Member
 <select name="member_id" id="member_id">
 <% for member in @members %>

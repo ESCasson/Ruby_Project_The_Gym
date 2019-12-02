@@ -1,4 +1,6 @@
-
+require_relative('../db/sql_runner.rb')
+require_relative('member.rb')
+require_relative('exclass.rb')
 
 class Attendee
   attr_reader :id
@@ -51,6 +53,13 @@ def self.find_by_exclass_id(exclass_id)
   return result.map{|attendee| Attendee.new(attendee)}
 end
 
+def member()
+  sql = "SELECT * FROM members WHERE id = $1"
+  values = [member_id]
+  result = SqlRunner.run(sql, values)
+  return Member.new(result[0])
+end
+
 def member_full_name()
   sql = "SELECT members.* FROM members
   INNER JOIN attendees ON attendees.member_id = members.id
@@ -59,6 +68,13 @@ def member_full_name()
   result = SqlRunner.run(sql, values)
   member = Member.new(result[0])
   return member.first_name + " " + member.last_name
+end
+
+def exclass()
+  sql = "SELECT * FROM exclasses WHERE id = $1"
+  values = [exclass_id]
+  result = SqlRunner.run(sql, values)
+  return Exclass.new(result[0])
 end
 
 
