@@ -1,7 +1,8 @@
 <h3>Add a class</h3>
 <form class="" action="/exclasses" method="post">
-  <label for="Date-and-Time">Date and Time</label>
+  <label for="Date">Date</label>
   <input type="date" id="date" name="date">
+  <label for="Time">Time</label>
   <input type="time" id="time" name="time">
 
   <label for="Class">Type</label>
@@ -26,19 +27,20 @@
 
 <h3>List of all Classes</h3>
 <% @exclasses.reverse.each do |exclass| %>
-  <p>Type: <%= exclass.type %></p>
-  <p>Instructor: <%= exclass.instructor %></p>
-  <p>Duration: <%= exclass.length_min.to_i() %></p>
-  <p>Date: <%= exclass.date %></p>
-  <p>Time: <%=exclass.time %></p>
+  <p>Date: <%= exclass.date %>&nbsp
+    Time: <%=exclass.time %>&nbsp
+  Type: <%= exclass.type %> &nbsp
+  <p>Instructor: <%= exclass.instructor %> &nbsp
+  Duration: <%= exclass.length_min.to_i() %> min</p>
+
   <p>Peak? :
     <%if exclass.peak == 't'%>
     <%="Yes"%>
     <%else%>
     <%="No"%>
     <% end %>
-  </p>
-  <p>Number of Spaces:   <%=exclass.spaces() %>
+  &nbsp
+  Number of Spaces:   <%=exclass.spaces() %>
   <form action="/exclasses/<%= exclass.id %>" method="get">
           <button class="btn" type="submit"><%= exclass.no_spaces_message_index %></button>
        </form></p>

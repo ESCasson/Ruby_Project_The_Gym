@@ -1,18 +1,19 @@
 <h3>Class Details</h3>
-<p>Type: <%= @exclass.type %>&nbsp &nbsp
-Instructor: <%= @exclass.instructor %></p>
 <p>Date: <%= @exclass.date %>&nbsp &nbsp
 Time: <%=@exclass.time %>&nbsp &nbsp
-Duration: <%= @exclass.length_min.to_i()%></p>
+Duration: <%= @exclass.length_min.to_i()%>mins &nbsp &nbsp
+Type: <%= @exclass.type %>&nbsp &nbsp
+Instructor: <%= @exclass.instructor %></p>
 <p>Peak? :
   <%if @exclass.peak == 't'%>
   <%="Yes"%>
   <%else%>
   <%="No"%>
   <% end %>
-</p>
+&nbsp &nbsp
 
-<p>Number of Spaces:   <%=@exclass.spaces() %>
+Number of Spaces:   <%=@exclass.spaces() %>
+<hr/>
 <h4>Add Attendees</h4>
 <form method="post" action="/attendees">
 <input type="hidden" name="exclass_id" id="exclass_id" value="<%= @exclass.id %>">
@@ -23,13 +24,14 @@ Duration: <%= @exclass.length_min.to_i()%></p>
 <% end %>
 </select>
 </label>
-<input class="btn" <%= @exclass.no_spaces_disabled %>type='submit' value="<%=@exclass.no_spaces_message_show %>">
+<input class="btn" <%= @exclass.no_spaces_disabled %>type='submit'
+value="<%=@exclass.no_spaces_message_show %>">
 </form>
 <h4>Current Attendees</h4>
-<p> <% for attendee in @attendees %>
-<p>Name: <%= attendee.member_full_name%>
+<p> <% for attendee in @attendees.reverse %>
+<p>Name: <%= attendee.member_full_name%><span>
 <form method = "post" action="attendees/<%= attendee.id %>/delete">
   <input class="btn" type="submit" value ="Delete Attendee">
-</form></p>
+</form></span</p>
 <%end %>
 </p>

@@ -6,7 +6,7 @@
   <label for="last-name">Last Name</label>
   <input type="text" id="last-name" name="last_name">
 
-  <label for="membership">Membership Level     .</label>
+  <label for="membership">Membership Level &nbsp &nbsp</label>
 
   <input type="radio" name="premier_member" value="t">Premier
   <input type="radio" name="premier_member" value="f">Standard
@@ -15,22 +15,21 @@
 
 
 </form>
+<br>
+<hr/>
 
 
 <h3>All the members</h3>
 <p> <% for member in @members.reverse %>
-<p>First name : <%=member.first_name%></p>
-<p>Last name : <%=member.last_name%></p>
-<p>Membership :
+<p><%=member.full_name%>&nbsp &nbsp
   <%if member.premier_member == 't'%>
   <%="Premier Member"%>
   <%else%>
   <%="Standard Member"%>
   <% end %>
-</p>
-<form action="/members/<%= member.id %>/edit" method="get">
+<p><form action="/members/<%= member.id %>/edit" method="get">
         <button class="btn" type="submit">Edit Member</button>
-     </form>
+     </form></p>
 <p><form method="post" action="members/<%= member.id %>/delete">
   <input class="btn" type="submit" value="Delete Member"/>
 </form></p>
