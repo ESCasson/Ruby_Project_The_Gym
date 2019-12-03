@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner.rb')
 require_relative('attendee.rb')
+require(' date')
 
 class Exclass
 
@@ -100,6 +101,10 @@ end
 
 def pretty_date()
   return @date[-2,2] + "/"+ @date[5,2] + "/" + @date[0,4]
+end
+
+def method_name
+
 end
 
 end

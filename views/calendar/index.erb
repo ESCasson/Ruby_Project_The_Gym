@@ -5,7 +5,8 @@
 <div class= "date-calendar">
   <h4><%= Nov_Dec.pretty_date(date) %></h4>
   <%for exclass in @exclasses %>
-  <%= exclass.time[0,5] %> - <%=exclass.type %>
+  <a class="cal-link" href="/exclasses/<%= exclass.id %>"><%= exclass.time[0,5] %> - <%=exclass.type %></a>
+
   <br>
 <%end %>
 </div>

@@ -62,33 +62,52 @@ exclass3 = Exclass.new({
   'peak' => 'true'
 })
 
-exclass1 = Exclass.new({
+exclass4 = Exclass.new({
   'date' => '2019-12-15',
-  'time' => '20:00',
-  'type' => 'Boxfit',
+  'time' => '17:00',
+  'type' => 'Yoga',
+  'instructor' => 'Shazza',
+  'length_min' => '60',
+  'capacity' => '15',
+  'peak' => 'true'
+})
+
+exclass5 = Exclass.new({
+  'date' => '2019-11-23',
+  'time' => '19:00',
+  'type' => 'Body Jam',
   'instructor' => 'Steve',
   'length_min' => '60',
   'capacity' => '15',
   'peak' => 'true'
 })
 
-exclass1 = Exclass.new({
-  'date' => '2019-12-15',
+
+exclass6 = Exclass.new({
+  'date' => '2019-11-22',
   'time' => '20:00',
   'type' => 'Boxfit',
-  'instructor' => 'Steve',
-  'length_min' => '60',
+  'instructor' => 'Sarah',
+  'length_min' => '45',
   'capacity' => '15',
   'peak' => 'true'
 })
-
-
-exclass1 = Exclass.new({
-  'date' => '2019-12-15',
+exclass7 = Exclass.new({
+  'date' => '2019-11-29',
   'time' => '20:00',
   'type' => 'Boxfit',
-  'instructor' => 'Steve',
-  'length_min' => '60',
+  'instructor' => 'Sarah',
+  'length_min' => '45',
+  'capacity' => '15',
+  'peak' => 'true'
+
+})
+exclass8 = Exclass.new({
+  'date' => '2019-12-03',
+  'time' => '20:00',
+  'type' => 'Boxfit',
+  'instructor' => 'Sarah',
+  'length_min' => '45',
   'capacity' => '15',
   'peak' => 'true'
 })
@@ -96,6 +115,11 @@ exclass1 = Exclass.new({
 exclass1.save()
 exclass2.save()
 exclass3.save()
+exclass4.save()
+exclass5.save()
+exclass6.save()
+exclass7.save()
+exclass8.save()
 
 
 attendee1 = Attendee.new({

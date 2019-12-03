@@ -27,13 +27,14 @@ h2, h3, h4, h5, h6 {
 
 
 a, a:link, a:visited {
-  color: #6BC5D2;
+  color: #CBDDE2;
   text-decoration: none;
 }
 
 a:hover, a:active, a:focus {
   color: #c6e2ff;
 }
+
 
 nav {
   padding: 0px;
