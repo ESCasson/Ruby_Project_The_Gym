@@ -1,6 +1,6 @@
 <h3>Class Details</h3>
 <p>Date: <%= @exclass.date %>&nbsp &nbsp
-Time: <%=@exclass.time %>&nbsp &nbsp
+Time: <%=@exclass.time[0,5] %>&nbsp &nbsp
 Duration: <%= @exclass.length_min.to_i()%>mins &nbsp &nbsp
 Type: <%= @exclass.type %>&nbsp &nbsp
 Instructor: <%= @exclass.instructor %></p>
@@ -29,9 +29,9 @@ value="<%=@exclass.no_spaces_message_show %>">
 </form>
 <h4>Current Attendees</h4>
 <p> <% for attendee in @attendees.reverse %>
-<p>Name: <%= attendee.member_full_name%><span>
+<p>Name: <%= attendee.member_full_name%>
 <form method = "post" action="attendees/<%= attendee.id %>/delete">
   <input class="btn" type="submit" value ="Delete Attendee">
-</form></span</p>
+</form></p>
 <%end %>
 </p>
