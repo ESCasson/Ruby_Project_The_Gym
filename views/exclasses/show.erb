@@ -1,5 +1,5 @@
 <h3>Class Details</h3>
-<p>Date: <%= @exclass.date %>&nbsp &nbsp
+<p>Date: <%= @exclass.pretty_date() %>&nbsp &nbsp
 Time: <%=@exclass.time[0,5] %>&nbsp &nbsp
 Duration: <%= @exclass.length_min.to_i()%>mins &nbsp &nbsp
 Type: <%= @exclass.type %>&nbsp &nbsp

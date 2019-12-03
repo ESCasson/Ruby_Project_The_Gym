@@ -53,6 +53,13 @@ def self.find_by_id(id)
   return result
 end
 
+def self.find_by_date(date)
+  sql = "SELECT * FROM exclasses WHERE date = $1"
+  values = [date]
+  exclasses = SqlRunner.run(sql, values)
+  return result = exclasses.map{|exclass| Exclass.new(exclass)}
+end
+
 def update()
   sql = "UPDATE exclasses SET (date, time, type, instructor, length_min, capacity, peak)
   = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
@@ -82,6 +89,10 @@ def no_spaces_message_show()
     return "No Spaces"
   end
   "Add Attendees"
+end
+
+def pretty_date()
+  return @date[-2,2] + "/"+ @date[5,2] + "/" + @date[0,4]
 end
 
 end

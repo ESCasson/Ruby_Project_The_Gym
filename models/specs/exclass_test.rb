@@ -31,6 +31,22 @@ def test_exclass()
   assert_equal('true', exclass1.peak)
 end
 
+def test_pretty_date()
+
+  exclass1 = Exclass.new({
+    #YYYY-MM-DD hh:mm:ss
+    'date' => '2019-12-01',
+    'time' => '20:00:00',
+    'type' => 'Body Balance',
+    'instructor' => 'Steve',
+    'length_min' => '60',
+    'capacity' => '30',
+    'peak' => 'true'
+  })
+
+assert_equal("01/12/2019", exclass1.pretty_date)
+
+end
 
 
 

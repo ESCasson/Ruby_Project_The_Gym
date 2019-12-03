@@ -44,7 +44,7 @@
 
 <h3>List of all Classes</h3>
 <% @exclasses.reverse.each do |exclass| %>
-  <p>Date: <%= exclass.date %>&nbsp
+  <p>Date: <%= exclass.pretty_date() %>&nbsp
     Time: <%=exclass.time[0,5] %>&nbsp
   Type: <%= exclass.type %> &nbsp
   <p>Instructor: <%= exclass.instructor %> &nbsp
