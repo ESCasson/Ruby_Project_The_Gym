@@ -1,7 +1,7 @@
 body {
   background-color: #365187;
   color: #CBDDE2;
-  font-family: 'Gruppo', cursive;
+  font-family: 'Gruppo', arial;
   padding: 0px;
   margin: 0px;
   font-size: 25px;
@@ -9,12 +9,13 @@ body {
 
 header{
 border: 30px;
+border-color: black;
 margin: 25px;
 padding: 25px;
 }
 
 h1 {
-  font-family: 'Audiowide', cursive;
+  font-family: 'Audiowide', arial;
   margin: 0px;
   padding: 0px;
   color: #5A87E0;
@@ -65,6 +66,14 @@ main {
 
 .flex--row {
   flex-direction: row;
+}
+.logo{
+  margin-right: 30px;
+  height: 30px;
+}
+
+.mainpic{
+  justify-content: center;
 }
 
 #content {

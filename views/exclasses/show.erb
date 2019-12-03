@@ -28,10 +28,11 @@ Number of Spaces:   <%=@exclass.spaces() %>
 value="<%=@exclass.no_spaces_message_show %>">
 </form>
 <h4>Current Attendees</h4>
-<p> <% for attendee in @attendees.reverse %>
-<p>Name: <%= attendee.member_full_name%>
+<ol>
+<% for attendee in @attendees.reverse %>
+<li>Name: <%= attendee.member_full_name%>
 <form method = "post" action="attendees/<%= attendee.id %>/delete">
   <input class="btn" type="submit" value ="Delete Attendee">
-</form></p>
+</form></li><br>
 <%end %>
-</p>
+</ol>

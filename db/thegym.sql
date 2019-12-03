@@ -22,6 +22,6 @@ CREATE TABLE exclasses(
 
 CREATE TABLE attendees(
 id SERIAL PRIMARY KEY,
-member_id INT REFERENCES members(id),
+member_id INT REFERENCES members(id) ON DELETE CASCADE,
 exclass_id INT REFERENCES exclasses(id)
 );

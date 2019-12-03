@@ -5,9 +5,16 @@ require( 'date')
 
 require_relative( '../models/exclass.rb' )
 require_relative( '../models/attendee.rb' )
+require_relative( '../models/classtype.rb' )
+require_relative( '../models/duration.rb' )
+require_relative( '../models/instructor.rb' )
+
 
 #show_all
 get '/exclasses' do
+  @instructors = Instructor.all()
+  @durations = Duration.all()
+  @classtypes = ClassType.all()
   @atteedees = Attendee.all()
   @exclasses = Exclass.all_current()
   erb( :"exclasses/index" )
@@ -35,6 +42,9 @@ end
 
 #edit the class
 get '/exclasses/:id/edit' do
+  @instructors = Instructor.all()
+  @durations = Duration.all()
+  @classtypes = ClassType.all()
   @exclass = Exclass.find_by_id(params[:id])
   erb( :"exclasses/edit")
 end
