@@ -32,4 +32,9 @@ class Nov_Dec
       "2019-12-18",
       "2019-12-19"]
   end
+
+  def self.pretty_date(date)
+    return date[-2,2] + "/"+ date[5,2] + "/" + date[0,4]
+
+  end
 end

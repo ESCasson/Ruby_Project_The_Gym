@@ -32,6 +32,13 @@ def self.delete_all()
   SqlRunner.run(sql)
 end
 
+def self.all()
+  sql = "SELECT * FROM exclasses"
+  result = SqlRunner.run(sql)
+  return result.map{|exclass| Exclass.new(exclass)}
+end
+
+
 def self.all_current()
   sql = "SELECT * FROM exclasses WHERE date > current_date - interval '1 day'
   ORDER BY date DESC, time DESC"

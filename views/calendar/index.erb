@@ -2,9 +2,11 @@
 <% for date in @dates %>
 <% @exclasses = Exclass.find_by_date(date) %>
 <div>
-  <h5><%= date %></h5>
+  <h5><%= Nov_Dec.pretty_date(date) %></h5>
   <%for exclass in @exclasses %>
-  Time:<%= exclass.time %> Type: <%=exclass.type %>
+  <%= exclass.time[0,5] %> - <%=exclass.type %>
+  <br>
 <%end %>
 </div>
+<hr>
 <%end %>
