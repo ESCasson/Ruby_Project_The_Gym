@@ -69,14 +69,38 @@ main {
 }
 .logo{
   margin-right: 30px;
-  height: 30px;
+  height: 120px;
 }
 
 .mainpic{
   justify-content: center;
 }
 
+.add-class-form select, input {
+  margin-top: 10px;
+  font-family: 'Gruppo', arial;
+  font-size: 14pt;
+}
+
+.calendar-container{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.date-calendar {
+border-style: solid;
+border-width: thin;
+border-color: grey;
+width: 300px;
+padding: 10px;
+margin: 10px;
+font-size: 20px;
+}
+
 #content {
   border-left: 1px solid #6BC5D2;
   padding-left: 25px;
+
 }

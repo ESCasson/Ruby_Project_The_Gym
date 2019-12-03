@@ -15,7 +15,7 @@ Instructor: <%= @exclass.instructor %></p>
 Number of Spaces:   <%=@exclass.spaces() %>
 <hr/>
 <h4>Add Attendees</h4>
-<form method="post" action="/attendees">
+<form class="add-class-form" method="post" action="/attendees">
 <input type="hidden" name="exclass_id" id="exclass_id" value="<%= @exclass.id %>">
 <label for="member">Select Member
 <select name="member_id" id="member_id">

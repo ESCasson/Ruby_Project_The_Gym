@@ -1,9 +1,9 @@
 <h3>Add a class</h3>
-<form class="" action="/exclasses" method="post">
+<form class="add-class-form" action="/exclasses" method="post">
   <label for="Date">Date</label>
   <input type="date" id="date" name="date">
   <label for="Time">Time</label>
-  <input type="time" id="time" name="time">
+  <input  type="time" id="time" name="time">
 
   <label for="Class">Type</label>
   <select name="type" id="type" type="type">
@@ -29,7 +29,7 @@
   </select>
 
   <label for="capacity">Class Capacity</label>
-  <input type="number" id="capacity" name="capacity" value=30>
+  <input  type="number" id="capacity" name="capacity" value=30>
   <label for="peak">Peak Class?</label>
   <input type="radio" name="peak" value ="t">Yes
   <input type="radio" name="peak" value ="f">No
@@ -40,6 +40,8 @@
 
 
 </form>
+
+<hr>
 
 
 <h3>List of all Classes</h3>
@@ -58,13 +60,13 @@
     <% end %>
   &nbsp
   Number of Spaces:   <%=exclass.spaces() %>
-  <form action="/exclasses/<%= exclass.id %>" method="get">
+  <p><form action="/exclasses/<%= exclass.id %>" method="get">
           <button class="btn" type="submit"><%= exclass.no_spaces_message_index %></button>
-       </form></p>
-<p><form action="/exclasses/<%= exclass.id %>/edit" method="get">
+       </form><br>
+<form action="/exclasses/<%= exclass.id %>/edit" method="get">
         <button class="btn" type="submit">Edit Class</button>
-     </form></p>
-  <p><form method = "post" action="exclasses/<%= exclass.id %>/delete">
+     </form><br>
+  <form method = "post" action="exclasses/<%= exclass.id %>/delete">
     <input class="btn" type="submit" value ="Delete Class">
   </form></p>
   <hr />

@@ -29,10 +29,13 @@ member2.save()
 member3.save()
 
 
+
+
+
 exclass1 = Exclass.new({
   'date' => '2019-12-15',
   'time' => '20:00',
-  'type' => 'Body Balance',
+  'type' => 'Boxfit',
   'instructor' => 'Steve',
   'length_min' => '60',
   'capacity' => '15',
@@ -51,11 +54,42 @@ exclass2 = Exclass.new({
 
 exclass3 = Exclass.new({
   'date' => '2019-12-15',
-  'time' => '20:00',
+  'time' => '19:00',
   'type' => 'Body Balance',
   'instructor' => 'Steve',
   'length_min' => '60',
   'capacity' => '30',
+  'peak' => 'true'
+})
+
+exclass1 = Exclass.new({
+  'date' => '2019-12-15',
+  'time' => '20:00',
+  'type' => 'Boxfit',
+  'instructor' => 'Steve',
+  'length_min' => '60',
+  'capacity' => '15',
+  'peak' => 'true'
+})
+
+exclass1 = Exclass.new({
+  'date' => '2019-12-15',
+  'time' => '20:00',
+  'type' => 'Boxfit',
+  'instructor' => 'Steve',
+  'length_min' => '60',
+  'capacity' => '15',
+  'peak' => 'true'
+})
+
+
+exclass1 = Exclass.new({
+  'date' => '2019-12-15',
+  'time' => '20:00',
+  'type' => 'Boxfit',
+  'instructor' => 'Steve',
+  'length_min' => '60',
+  'capacity' => '15',
   'peak' => 'true'
 })
 

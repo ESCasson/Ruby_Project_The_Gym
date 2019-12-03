@@ -1,12 +1,13 @@
 <h3>Calendar</h3>
+<div class="calendar-container">
 <% for date in @dates %>
 <% @exclasses = Exclass.find_by_date(date) %>
-<div>
-  <h5><%= Nov_Dec.pretty_date(date) %></h5>
+<div class= "date-calendar">
+  <h4><%= Nov_Dec.pretty_date(date) %></h4>
   <%for exclass in @exclasses %>
   <%= exclass.time[0,5] %> - <%=exclass.type %>
   <br>
 <%end %>
 </div>
-<hr>
 <%end %>
+</div>
