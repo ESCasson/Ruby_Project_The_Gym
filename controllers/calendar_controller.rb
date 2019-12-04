@@ -1,6 +1,5 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require( 'pry' )
 require( 'date')
 
 require_relative( '../models/exclass.rb' )

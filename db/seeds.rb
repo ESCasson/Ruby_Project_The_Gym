@@ -23,10 +23,24 @@ member3 = Member.new({
   'premier_member' => 'true'
 })
 
+member4 = Member.new({
+  'first_name' => 'Derek',
+  'last_name' => 'McDonald',
+  'premier_member' => 'true'
+})
+
+member5 = Member.new({
+  'first_name' => 'Scooter',
+  'last_name' => 'Casson',
+  'premier_member' => 'true'
+})
+
 
 member1.save()
 member2.save()
 member3.save()
+member4.save()
+member5.save()
 
 
 
@@ -38,7 +52,7 @@ exclass1 = Exclass.new({
   'type' => 'Boxfit',
   'instructor' => 'Steve',
   'length_min' => '60',
-  'capacity' => '15',
+  'capacity' => '2',
   'peak' => 'true'
 })
 
@@ -48,7 +62,7 @@ exclass2 = Exclass.new({
   'type' => 'Body Balance',
   'instructor' => 'Debbie',
   'length_min' => '60',
-  'capacity' => '30',
+  'capacity' => '5',
   'peak' => 'false'
 })
 
@@ -58,7 +72,7 @@ exclass3 = Exclass.new({
   'type' => 'Body Balance',
   'instructor' => 'Steve',
   'length_min' => '60',
-  'capacity' => '30',
+  'capacity' => '0',
   'peak' => 'true'
 })
 
@@ -127,18 +141,30 @@ attendee1 = Attendee.new({
   'exclass_id' => exclass1.id
   })
 attendee2 = Attendee.new({
-  'member_id' => member2.id,
-  'exclass_id' => exclass1.id
+  'member_id' => member1.id,
+  'exclass_id' => exclass2.id
   })
 
 attendee3 = Attendee.new({
-  'member_id' => member3.id,
-  'exclass_id' => exclass3.id
+  'member_id' => member2.id,
+  'exclass_id' => exclass2.id
   })
+
+attendee4 = Attendee.new({
+    'member_id' => member3.id,
+    'exclass_id' => exclass2.id
+    })
+
+attendee5 = Attendee.new({
+      'member_id' => member5.id,
+      'exclass_id' => exclass2.id
+      })
 
 attendee1.save()
 attendee2.save()
 attendee3.save()
+attendee4.save()
+attendee5.save()
 
 
 

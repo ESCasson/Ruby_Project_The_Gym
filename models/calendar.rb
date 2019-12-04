@@ -42,4 +42,10 @@ class Calendar
     result = DateTime.parse(date)
     return result.strftime("%A")
   end
+
+  def self.date_plus_1(date)
+    result = DateTime.parse(date)
+
+  end
+
 end
