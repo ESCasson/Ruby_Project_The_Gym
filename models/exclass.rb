@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner.rb')
 require_relative('attendee.rb')
-require(' date')
+
 
 class Exclass
 
@@ -62,7 +62,7 @@ def self.find_by_id(id)
 end
 
 def self.find_by_date(date)
-  sql = "SELECT * FROM exclasses WHERE date = $1"
+  sql = "SELECT * FROM exclasses WHERE date = $1 ORDER BY time"
   values = [date]
   exclasses = SqlRunner.run(sql, values)
   return result = exclasses.map{|exclass| Exclass.new(exclass)}
@@ -89,7 +89,7 @@ def no_spaces_message_index()
   if spaces < 1
     return "Delete Attendees"
   end
-  "Add Attendees"
+  "Add or Delete Attendees"
 end
 
 def no_spaces_message_show()
@@ -103,8 +103,12 @@ def pretty_date()
   return @date[-2,2] + "/"+ @date[5,2] + "/" + @date[0,4]
 end
 
-def method_name
+def calendar_date()
+ return DateTime.parse(@date)
+end
 
+def day_of_the_week()
+  return calendar_date.strftime("%A")
 end
 
 end

@@ -3,7 +3,8 @@
 <% for date in @dates %>
 <% @exclasses = Exclass.find_by_date(date) %>
 <div class= "date-calendar">
-  <h4><%= Nov_Dec.pretty_date(date) %></h4>
+  <h4><%= Calendar.day_of_the_week(date) %> -
+  <%= Calendar.pretty_date(date) %></h4>
   <%for exclass in @exclasses %>
   <a class="cal-link" href="/exclasses/<%= exclass.id %>"><%= exclass.time[0,5] %> - <%=exclass.type %></a>
 

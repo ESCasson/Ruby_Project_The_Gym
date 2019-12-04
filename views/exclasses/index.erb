@@ -13,9 +13,9 @@
   </select>
 
   <label for="Class">Duration</label>
-  <select name="duration">
+  <select name="length_min" id="length_min" type="length_min">
     <% for length in @durations %>
-    <option value="<%=length  %>"><%= length %></option>
+    <option value="<%=length.to_i()%>"><%= length %></option>
     <%end %>
   </select>
 
