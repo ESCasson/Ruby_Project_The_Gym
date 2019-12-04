@@ -5,9 +5,9 @@ require( 'date')
 
 require_relative( '../models/exclass.rb' )
 require_relative( '../models/attendee.rb' )
-require_relative( '../models/classtype.rb' )
-require_relative( '../models/duration.rb' )
-require_relative( '../models/instructor.rb' )
+require_relative( '../models/dropdowns/classtype.rb' )
+require_relative( '../models/dropdowns/duration.rb' )
+require_relative( '../models/dropdowns/instructor.rb' )
 
 
 #show_all

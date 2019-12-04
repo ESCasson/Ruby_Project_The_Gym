@@ -1,0 +1,107 @@
+body {
+  background-color: #365187;
+  color: #CBDDE2;
+  font-family: 'Gruppo', arial;
+  padding: 0px;
+  margin: 0px;
+  font-size: 25px;
+}
+
+header{
+border: 30px;
+border-color: black;
+margin: 25px;
+padding: 25px;
+}
+
+h1 {
+  font-family: 'Audiowide', arial;
+  margin: 0px;
+  padding: 0px;
+  color: #5A87E0;
+}
+
+h2, h3, h4, h5, h6 {
+  color: #6BC5D2;
+}
+
+
+a, a:link, a:visited {
+  color: #CBDDE2;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: #5A87E0;
+}
+
+
+nav {
+  padding: 0px;
+  margin: 0px;
+  padding-right: 25px;
+}
+
+nav ul li {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+main {
+  padding: 25px;
+}
+
+.flex {
+  display: flex;
+}
+.flex--header {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex--row {
+  flex-direction: row;
+}
+.logo{
+  margin-right: 30px;
+  height: 120px;
+}
+
+.mainpic{
+  justify-content: center;
+}
+
+.add-class-form select, input {
+  margin-top: 10px;
+  font-family: 'Gruppo', arial;
+  font-size: 14pt;
+}
+
+.calendar-container{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.date-calendar {
+border-style: solid;
+border-width: thin;
+border-color: grey;
+width: 300px;
+padding: 10px;
+margin: 10px;
+font-size: 20px;
+}
+
+#content {
+  border-left: 1px solid #6BC5D2;
+  padding-left: 25px;
+
+}
