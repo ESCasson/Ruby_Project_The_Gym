@@ -1,3 +1,7 @@
+Brief - Create an app to be used by a gym to manage exercise classes, membership and class attendance.  
+Clean, professional style and layout.  Considering UX within technology constraints.
+Extension - Displaying exercise classes on a current month calendar with the option of changing the date range.
+
 Front page of the site is http://localhost:4567/
 
 For planning and future enhancement options please see https://trello.com/b/QaFellsA/the-gym
